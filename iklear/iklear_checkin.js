@@ -6,7 +6,7 @@ iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品
 添加 MITM,添加 SCRIPT,自行修改所需task执行时间。示例格式为Surge写法，quanx用户自行修改。
 
 获取cookie方法：
-微信打开iklear官方微商城，链接：https://shop42867343.m.youzan.com/v2/feature/koy4ThfGd6?st=1&is_share=1&from_uuid=631f330d-80c2-626f-173f-f4855e50ee12&sf=wx_sm&share_cmpt=native_wechat，点击我的订单 => 右上角“签到” => 签到，提示 🎉获取Cookie: 成功，即可使用checkin脚本自动签到。
+微信打开iklear官方微商城，链接：https://shop42867343.m.youzan.com/v2/feature/koy4ThfGd6?st=1&is_share=1&from_uuid=631f330d-80c2-626f-173f-f4855e50ee12&sf=wx_sm&share_cmpt=native_wechat，点击我的订单 => 右上角“签到” => 签到，提示 “🎉获取Cookie: 成功” 即可使用checkin脚本自动签到。
 
 [MITM]
 hostname = shop42867343.youzan.com
