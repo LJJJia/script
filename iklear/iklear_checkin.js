@@ -3,7 +3,7 @@ iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品
 此脚本是小白 @LJJJia 根据 @GideonSenku 大佬的教程，通过修改 @chavyleung 大佬的签到脚本而成，本意自用，放出来各位有需求的使用，感谢各位大佬的mode和教程。
 
 使用方法：
-添加 MITM,添加 SCRIPT,自行修改所需task执行时间。示例格式为Surge写法，quanx用户自行修改。
+添加 MITM,添加 SCRIPT,自行修改所需task执行时间。
 
 获取cookie方法：
 微信打开iklear官方微商城，链接：https://shop42867343.m.youzan.com/v2/feature/koy4ThfGd6?st=1&is_share=1&from_uuid=631f330d-80c2-626f-173f-f4855e50ee12&sf=wx_sm&share_cmpt=native_wechat，点击我的订单 => 右上角“签到” => 签到，提示 “🎉获取Cookie: 成功” 即可使用checkin脚本自动签到。
@@ -11,9 +11,24 @@ iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品
 [MITM]
 hostname = shop42867343.youzan.com
 
+**Surge**
 [Script]
-iklear_checkin = type=cron,cronexp=0 18 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js
 iklear_cookie = type=http-request,pattern=^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json,script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js
+
+iklear_checkin = type=cron,cronexp=0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js
+
+**QuanX**
+[rewrite_local]
+^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json url script-request-header https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js
+
+[task_local]
+0 0 * * * https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js, tag=iklear_checkin, enabled=true
+
+**Loon**
+[Script]
+http-request ^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js, timeout=10, tag=iklear_cookie
+
+cron "0 0 * * *" script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js, tag=iklear_checkin
 
 */
 const cookieName = 'IKlear微商城'
