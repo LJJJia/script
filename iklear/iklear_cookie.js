@@ -1,5 +1,5 @@
 /*
-iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品，脚本可签到iklear官方微商城获取积分，兑换iklear清洁产品。目前不知未购买过iklear产品的用户是否可以登录商城签到领积分，如有测试结果还望反馈一下，感谢。
+iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品，脚本可签到iklear官方微商城获取积分，兑换iklear清洁产品。
 此脚本是小白 @LJJJia 根据 @GideonSenku 大佬的教程，通过修改 @chavyleung 大佬的签到脚本而成，本意自用，放出来各位有需求的使用，感谢各位大佬的mode和教程。
 
 使用方法：
