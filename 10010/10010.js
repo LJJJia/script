@@ -52,7 +52,7 @@ function sign() {
       subTitle = `【话费建议】💰该充话费了💰`
       detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
 【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
-    } else if (parseFloat(money.number) > 10){
+    } else if (parseFloat(money.number) > 100){
       time = `请查收${result.flush_date_time} 的话费使用情况报告～`
       subTitle = `【话费建议】💰土豪不需要查话费💰`
       detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}

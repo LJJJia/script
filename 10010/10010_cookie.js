@@ -29,16 +29,12 @@ cron "0 8,19 * * *" script-path=https://raw.githubusercontent.com/LJJJia/script/
 */
 
 const cookieName = '联通话费提醒'
-const signurlKey = 'senku_signurl_10010'
 const signheaderKey = 'senku_signheader_10010'
-const signbodyKey = 'senku_signbody_10010'
 const senku = init()
 
 const requrl = $request.url
 if ($request && $request.method != 'OPTIONS') {
-  const signurlVal = requrl
   const signheaderVal = JSON.stringify($request.headers)
-  if (signurlVal) senku.setdata(signurlVal, signurlKey)
   if (signheaderVal) senku.setdata(signheaderVal, signheaderKey)
   senku.msg(cookieName, `🎉获取Cookie: 成功`, ``)
 }  
