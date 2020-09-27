@@ -64,7 +64,7 @@ function sign() {
 【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
       }   
     } else {
-        subTitle = `❌话费流量Token失效啦，快去更新！❌`
+        subTitle = `❌Cookie失效啦，快去更新！❌`
         detail = `进入查看日志详情`
         console.log(data)
       }
