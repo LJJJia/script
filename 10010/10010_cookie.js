@@ -14,17 +14,17 @@ hostname = *.10010.com
 
 **Surge**
 [Script]
-10010余额提醒cookie = type=http-request, pattern=^https\:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm, script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js
+10010余额提醒cookie = type=http-request, pattern=^https:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm, script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js
 10010余额提醒 = type=cron,cronexp="0 8,19 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010.js,script-update-interval=0
 
 **QuanX**
 [rewrite_local]
-^https\:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm url script-request-header https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js
+^https:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm url script-request-header https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js
 [task_local]
 0 8,19 * * * https://raw.githubusercontent.com/LJJJia/script/master/10010/10010.js, tag=10010余额提醒, enabled=true
 **Loon**
 [Script]
-http-request ^https\:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js, timeout=10, tag=10010余额提醒cookie
+http-request ^https:\/\/m\.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010_cookie.js, timeout=10, tag=10010余额提醒cookie
 cron "0 8,19 * * *" script-path=https://raw.githubusercontent.com/LJJJia/script/master/10010/10010.js, tag=10010余额提醒
 */
 
