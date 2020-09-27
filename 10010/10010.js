@@ -41,12 +41,12 @@ function sign() {
   senku.get(url, (error, response, data) => {
     const result = JSON.parse(data)
     const code = result.code
-    const traffic = result.data.dataList[0];
-    const money = result.data.dataList[1];
     let time = ``
     let subTitle = ``
     let detail = ``
     if (code == "Y") {
+      const traffic = result.data.dataList[0];
+      const money = result.data.dataList[1];
       if (parseFloat(money.number) < 10){
       time = `请查收${result.flush_date_time} 的话费使用情况报告～`
       subTitle = `【话费建议】💰该充话费了💰`
