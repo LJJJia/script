@@ -52,37 +52,31 @@ function sign() {
             if (parseFloat(money.number) < 10){
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】💰该充话费了💰`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
             } else if (parseFloat(money.number) > 100){
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】💰土豪不需要查话费💰`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
             } else {
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】🎉还能可劲造几天🎉`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}，${traffic.usedTitle}`
             }
         } else if (traffic.remainTitle == "超出流量"){
               if (parseFloat(money.number) < 10){
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】💰该充话费了💰`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
             } else if (parseFloat(money.number) > 100){
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】💰土豪不需要查话费💰`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
             } else {
                 time = `  请查收${result.flush_date_time} 的话费使用情况报告～`
                 subTitle = `【话费建议】🎉还能可劲造几天🎉`
-                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
-【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
+                detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}\n【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
             }
-          }
+        }
     } else {
         subTitle = `❌Cookie失效啦，快去更新！❌`
         detail = `进入查看日志详情`
