@@ -82,6 +82,7 @@ function sign() {
                 detail = `【话费情况】${money.remainTitle} ${money.number} ${money.unit}
       【流量情况】${traffic.remainTitle} ${traffic.number} ${traffic.unit}`
             }
+          }
     } else {
         subTitle = `❌Cookie失效啦，快去更新！❌`
         detail = `进入查看日志详情`
