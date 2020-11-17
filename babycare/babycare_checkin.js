@@ -1,45 +1,32 @@
 /*
-iklear是美国显示器清洁品牌，Apple Store官方在使用的清洁产品，脚本可签到iklear官方微商城获取积分，兑换iklear清洁产品。目前不知未购买过iklear产品的用户是否可以登录商城签到领积分，如有测试结果还望反馈一下，感谢。
-@LJJJia 根据 @GideonSenku 大佬的教程，通过修改 @chavyleung 大佬的签到脚本而成，本意自用，放出来各位有需求的使用，感谢各位大佬的mode和教程。
-
-使用方法：
-添加 MITM,添加 SCRIPT,自行修改所需task执行时间。
-
-获取cookie方法：
-浏览器打开iklear官方微商城h5，链接：
-
-https://shop42867343.m.youzan.com/v2/feature/koy4ThfGd6
-
-点击我的订单 => 右上角“签到” => 签到，提示 “🎉获取Cookie: 成功” 即可使用checkin脚本自动签到。
-
 
 [MITM]
-hostname = shop42867343.youzan.com
+hostname = shop43460925.youzan.com
 
 **Surge**
 [Script]
-iklear_cookie = type=http-request,pattern=^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json,script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js
+babycare_cookie = type=http-request,pattern=^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json,script-path=https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_cookie.js
 
-iklear_checkin = type=cron,cronexp=0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js
+babycare_checkin = type=cron,cronexp=0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_checkin.js
 
 **QuanX**
 [rewrite_local]
-^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json url script-request-header https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js
+^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json url script-request-header https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_cookie.js
 
 [task_local]
-0 0 * * * https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js, tag=iklear_checkin, enabled=true
+0 0 * * * https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_checkin.js, tag=babycare_checkin, enabled=true
 
 **Loon**
 [Script]
-http-request ^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_cookie.js, timeout=10, tag=iklear_cookie
+http-request ^https:\/\/shop42867343\.youzan\.com\/wscump\/checkin\/checkin\.json script-path=https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_cookie.js, timeout=10, tag=babycare_cookie
 
-cron "0 0 * * *" script-path=https://raw.githubusercontent.com/LJJJia/script/master/iklear/iklear_checkin.js, tag=iklear_checkin
+cron "0 0 * * *" script-path=https://raw.githubusercontent.com/LJJJia/script/master/babycare/babycare_checkin.js, tag=babycare_checkin
 
 */
-const cookieName = 'IKlear微商城'
-const signurlKey = 'senku_signurl_iklear'
-const signheaderKey = 'senku_signheader_iklear'
-const signbodyKey = 'senku_signbody_iklear'
+const cookieName = 'babycare微商城'
+const signurlKey = 'senku_signurl_babycare'
+const signheaderKey = 'senku_signheader_babycare'
+const signbodyKey = 'senku_signbody_babycare'
 const senku = init()
 const signurlVal = senku.getdata(signurlKey)
 const signheaderVal = senku.getdata(signheaderKey)
