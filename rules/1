@@ -1,0 +1,37 @@
+[custom]
+;不要随意改变关键字，否则会导致出错
+;acl4SSR规则-在线更新版
+
+;去广告：支持
+;自动测速：支持
+;微软分流：支持
+;苹果分流：支持
+;增强中国IP段：不支持
+;增强国外GFW：不支持
+
+ruleset=🧬 直连域名,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+ruleset=🧬 直连域名,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+ruleset=🚫 净化拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+ruleset=🚫 净化拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+ruleset=🧬 直连域名,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+ruleset=💻 微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🍎 苹果服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=📱 电报代理,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+ruleset=🎬 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=💛 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+ruleset=🧬 直连域名,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🧬 直连域名,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+ruleset=🧬 直连域名,[]GEOIP,CN
+ruleset=🏳️‍⚧️ 兜底策略,[]FINAL
+
+custom_proxy_group=💛 节点选择`select`[]DIRECT`.*
+custom_proxy_group=📱 电报代理`select`[]💛 节点选择`[]🧬 直连域名`.*
+custom_proxy_group=💻 微软服务`select`[]🧬 直连域名`[]💛 节点选择`.*
+custom_proxy_group=🍎 苹果服务`select`[]💛 节点选择`[]🧬 直连域名`.*
+custom_proxy_group=🎬 国外媒体`select`[]💛 节点选择`[]🧬 直连域名`.*
+custom_proxy_group=🧬 直连域名`select`[]DIRECT`[]💛 节点选择`
+custom_proxy_group=🚫 净化拦截`select`[]REJECT`[]DIRECT
+custom_proxy_group=🏳️‍⚧️ 兜底策略`select`[]💛 节点选择`[]🧬 直连域名`.*
+
+enable_rule_generator=true
+overwrite_original_rules=true
